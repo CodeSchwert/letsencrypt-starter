@@ -1,0 +1,24 @@
+version: "3.6"
+
+services:
+  http-server:
+    build: .
+    image: "letsencrypt-starter/http-server:latest"
+    ports:
+      - "80:80"
+    container_name: ""letsencrypt-starter/http-server"
+    volumes:
+      - type: bind
+        source: "/opt/letsencrypt/www"
+        target: "/opt/http-server/public"
+
+  certbot:
+    image: "certbot/certbot:latest"
+    container_name: "letsencrypt-starter/certbot"
+    volumes:
+      - type: bind
+        source: "/etc/letsencrypt"
+        target: "/etc/letsencrypt"
+      - type: bind
+        source: "/opt/letsencrypt/www"
+        target: "/var/lib/letsencrypt"

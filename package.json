@@ -1,0 +1,23 @@
+{
+  "name": "letsencrypt-starter",
+  "version": "1.0.0",
+  "description": "Generate Let's Encrypt certs with Docker containers.",
+  "main": "docker-compose.yml",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/http-server/bin/http-server -p 80"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CodeSchwert/letsencrypt-starter.git"
+  },
+  "author": "CodeSchwert (https://github.com/CodeSchwert)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeSchwert/letsencrypt-starter/issues"
+  },
+  "homepage": "https://github.com/CodeSchwert/letsencrypt-starter#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
