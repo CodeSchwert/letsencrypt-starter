@@ -2,11 +2,11 @@ version: "3.6"
 
 services:
   http-server:
-    build: "./"
+    build: ./
     image: "letsencrypt-starter/http-server:latest"
     ports:
       - "80:80"
-    container_name: ""letsencrypt-starter/http-server"
+    container_name: "letsencrypt-starter/http-server"
     volumes:
       - type: bind
         source: "/opt/letsencrypt/www"
