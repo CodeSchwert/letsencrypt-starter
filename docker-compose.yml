@@ -5,7 +5,7 @@ services:
     build: .
     image: "letsencrypt-starter/http-server:latest"
     ports:
-     - "80:80"
+     - "80:8080"
     container_name: "letsencrypt-starter/http-server"
     volumes:
       - type: bind

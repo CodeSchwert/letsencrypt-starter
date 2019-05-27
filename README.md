@@ -17,10 +17,11 @@ sudo chown ubuntu:ubuntu -R /opt/MyDir
 
 cd /opt/MyDir 
 git clone https://github.com/CodeSchwert/letsencrypt-starter.git
-docker-compose run --rm -d -p 80:80 http-server
+docker-compose run --rm -d -p 80:8080 http-server
 
 # make sure to set the correct variables or command args!!!
-docker-compose run certbot certonly --webroot -w /opt/letsencrypt/www -d $YOUR_DOMAIN --agree-tos --email $YOUR_EMAIL
+# remove `--dry-run` when verification is working
+docker-compose run certbot certonly --webroot -w /opt/letsencrypt/www -d $YOUR_DOMAIN --agree-tos --email $YOUR_EMAIL --dry-run
 
 # cleanup the stack and images
 docker-compose down
